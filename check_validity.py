@@ -45,7 +45,7 @@ def isSizeRight(instruction, ls):
         if len(ls)==3:
             return True
     else:
-        type_instruction = OPcodes_final[instruction][-1]
+        type_instruction = opcode[instruction][-1]
         if len(ls) == type_space[type_instruction]:
             return True
     return False
