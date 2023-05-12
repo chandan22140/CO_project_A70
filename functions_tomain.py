@@ -9,8 +9,7 @@ def getRegisterCount(type):
     """Returns Register Count"""
     return type_register[type]
 
-def isVarValid(var_given,var_called,alphanum,inst):
-    """Checks if Variables are Valid"""
+def isVarValid(var_given,var_called,AN,inst):
     numarr = ['0','1','2','3','4','5','6','7','8','9']
     inst2 = inst.copy()
     inst2.append('var')
@@ -24,7 +23,7 @@ def isVarValid(var_given,var_called,alphanum,inst):
             count = 0
             count2 = 0
             for j in a:
-                if j in alphanum:
+                if j in AN:
                     count+=1
                 if j in numarr:
                     count2+=1
@@ -47,7 +46,7 @@ def isVarValid(var_given,var_called,alphanum,inst):
     return (0,0) #no issues all variables declared and called are valid
 
 
-def isLabelValid(lbl_called,lbl_given,lbl_inst,inst,alphanum,lbl_given2,var_given2): #add in main
+def isLabelValid(lbl_called,lbl_given,lbl_inst,inst,AN,lbl_given2,var_given2): #add in main
     """Checks if Labels validity"""
     numarr = ['0','1','2','3','4','5','6','7','8','9']
     inst2 = inst.copy()
@@ -63,7 +62,7 @@ def isLabelValid(lbl_called,lbl_given,lbl_inst,inst,alphanum,lbl_given2,var_give
         count = 0
         count4 = 0
         for j in a:
-            if j in alphanum:
+            if j in AN:
                 count+=1
             if j in numarr:
                 count4+=1
